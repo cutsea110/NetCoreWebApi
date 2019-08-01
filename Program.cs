@@ -13,7 +13,7 @@ namespace NetCoreWebApi
     public static class AppConfiguration
     {
         public static string SiteUrl => "http://localhost:5000";
-        public static string SecretKey => Guid.NewGuid().ToString();
+        public static string SecretKey { get; } = Guid.NewGuid().ToString();
     }
     public class Program
     {

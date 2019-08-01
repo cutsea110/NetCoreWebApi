@@ -58,20 +58,44 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 >                                                                                                                                                                                                                                     
 } [46 bytes data]                                                                                                                                                                                                                     
 * upload completely sent off: 46 out of 46 bytes                                                                                                                                                                                      
-* Mark bundle as not supporting multiuse                                                                                                                                                                                              
+100    46    0     0  100    46      0    223 --:--:-- --:--:-- --:--:--   223* Mark bundle as not supporting multiuse                                                                                                                
 < HTTP/1.1 200 OK                                                                                                                                                                                                                     
-< Date: Thu, 01 Aug 2019 15:07:00 GMT                                                                                                                                                                                                 
+< Date: Thu, 01 Aug 2019 16:14:55 GMT                                                                                                                                                                                                 
 < Content-Type: application/json; charset=utf-8                                                                                                                                                                                       
 < Server: Kestrel                                                                                                                                                                                                                     
 < Transfer-Encoding: chunked                                                                                                                                                                                                          
 <                                                                                                                                                                                                                                     
 { [554 bytes data]                                                                                                                                                                                                                    
-100   593    0   547  100    46   5362    450 --:--:-- --:--:-- --:--:--  5813{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyZDFkMGY3ZC0wOGRmLTQ3YWQtOTdhMy0yZDdlNDM2NTdkZGYiLCJzdWIiOiJjdXRzZWExMTAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIyZDFkMGY3ZC0wOGRmLTQ3YWQtOTdhMy0yZDdlNDM2NTdkZGYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiY3V0c2VhMTEwIiwiZXhwIjoxNTY1Mjc2ODIxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.CdTDlZFGfOYKCzEQ8ogSN9BwPgLFSYleZScsDs65GiI","expiration":"2019-08-08T15:07:01Z"}                                                                 
-* Connection #0 to host localhost left intact                                                                                                                                                                                         
-                                                                                                                                                                                                                                      
+100   593    0   547  100    46   2327    195 --:--:-- --:--:-- --:--:--  2523{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJzdWIiOiJjdXRzZWExMTAiLCJodHRwOi8vc2NoZW1hc
+y54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiY3V0c2VhMTEwIiwiZXhwIjoxNTY1MjgwODk
+1LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.I-3cU5hJduaHSiiM-YVtdIFj11vcKEAOWUmH1bHGMnA","expiration":"2019-08-08T16:14:55Z"}
+* Connection #0 to host localhost left intact                                                                                                                                                                                                                       ```
 ```
 6. and then check this.
 ```shell
-TODO: this is failed.
-```
+$ curl.exe -v -i -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJzdWIiOiJjdXRzZWExMTAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiY3V0c2VhMTEwIiwiZXhwIjoxNTY1MjgwODk1LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.I-3cU5hJduaHSiiM-YVtdIFj11vcKEAOWUmH1bHGMnA' http://localhost:5000/api/me
+HTTP/1.1 200 OK
+Date: Thu, 01 Aug 2019 16:15:38 GMT
+Content-Type: application/json; charset=utf-8
+Server: Kestrel
+Transfer-Encoding: chunked
 
+{"id":"64c84538-a911-4520-b7f0-ef80b7c961ea","userName":"cutsea110"}*   Trying ::1:5000...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 5000 (#0)
+> GET /api/me HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.65.1
+> Accept: */*
+> Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJzdWIiOiJjdXRzZWExMTAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2NGM4NDUzOC1hOTExLTQ1MjAtYjdmMC1lZjgwYjdjOTYxZWEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiY3V0c2VhMTEwIiwiZXhwIjoxNTY1MjgwODk1LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.I-3cU5hJduaHSiiM-YVtdIFj11vcKEAOWUmH1bHGMnA
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Thu, 01 Aug 2019 16:15:38 GMT
+< Content-Type: application/json; charset=utf-8
+< Server: Kestrel
+< Transfer-Encoding: chunked
+<
+{ [74 bytes data]
+* Connection #0 to host localhost left intact
+```

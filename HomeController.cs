@@ -41,7 +41,7 @@ namespace NetCoreWebApi
     [Authorize]
     [ApiController]
     [Route("api")]
-    public class ValuesController : ControllerBase
+    public class HomeController : ControllerBase
     {
         static List<User> _testUser = new List<User>()
         {
